@@ -6,7 +6,7 @@ Client downloads: https://github.com/OhSalad/OhSalad.github.io/releases
 
 Website: https://ohsalad.github.io/
 
-The first qualified client release is being prepared. No installer is available yet.
+A manual installer/updater test prerelease is available. Its test feed expires on 2026-10-08 at 15:46 UTC. The first production client release is still being prepared.
 
 ## Update feed
 
@@ -15,6 +15,6 @@ The managed launcher will read these exact HTTPS URLs:
 - https://ohsalad.github.io/updater/status.json
 - https://ohsalad.github.io/updater/status.sig.json
 
-Only reviewed, signed status documents describing a qualified active server may be published. Empty or unsigned placeholder status documents must not be used.
+The current feed is a signed **test-channel fixture**, trusted only by the manual test installer. It describes simulated local-server compatibility and changes an unused probe asset. It is not evidence of production activation. A production feed requires qualification and production signatures; empty or unsigned placeholders must not be used.
 
 Installers and patch ZIPs belong in immutable GitHub Releases, outside the Pages tree. Private source code, server packages, signing keys, and credentials must never be uploaded here.

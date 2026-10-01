@@ -1,8 +1,9 @@
 name: Publish launcher server information
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '*/5 * * * *'
+  push:
+    paths:
+      - 'launcher/announcements.json'
 permissions:
   contents: write
   pages: write

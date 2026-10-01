@@ -18,3 +18,9 @@ The managed launcher will read these exact HTTPS URLs:
 The current feed is a signed **test-channel fixture**, trusted only by the online test installer. It changes an unused probe asset and does not establish actual live server compatibility or production activation. A production feed requires qualification and production signatures; empty or unsigned placeholders must not be used.
 
 Installers and patch ZIPs belong in immutable GitHub Releases, outside the Pages tree. Private source code, server packages, signing keys, and credentials must never be uploaded here.
+
+## Launcher dashboard
+
+Installer 0.1.1 adds server-configured XP/team XP/drop rates, sampled logged-in account counts, events, maintenance notices, and file-check progress. Display information is fetched from https://ohsalad.github.io/launcher/server-info.json. It is separate from signed update authorization. Rates are read from the VPS configuration; they are not hardcoded in the launcher.
+
+Edit launcher/announcements.json for notices and dated events. The publisher runs on a five-minute schedule; GitHub scheduling and Pages caching can delay updates. The launcher shows sample time and unavailable/stale states. Managed installers require an empty destination; the current operator test launcher was updated directly.

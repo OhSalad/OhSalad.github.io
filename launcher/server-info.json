@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "gate_address": "82.38.139.13",
-  "sampled_at_utc": "2026-10-02T20:17:20.977782Z",
-  "online_players": 1,
+  "sampled_at_utc": "2026-10-02T20:22:32.635615Z",
+  "online_players": 0,
   "rates": {
     "xp": 10.0,
     "team_xp": 10.0,

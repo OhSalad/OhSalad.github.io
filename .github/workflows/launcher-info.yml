@@ -13,4 +13,4 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
       - name: Validate editorial document
-        run: python3 .github/scripts/announcements.py launcher/announcements.json
+        run: python3 .github/scripts/launcher_announcements.py launcher/announcements.json

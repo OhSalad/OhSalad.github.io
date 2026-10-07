@@ -1,4 +1,11 @@
 {
   "notice": "",
-  "events": []
+  "events": [
+    {
+      "title": "Patch notes - Inventory, trading & gems",
+      "description": "Fixed trading confirmations and retries, NPC inventory-space checks (including sailing), and item stacking/bank interactions. Restored gem bonus tooltips. GMs can choose gem tiers and grant Strength, Agility, Accuracy, Constitution or Spirit pet foods in 1/5/10-level versions. Restart through the launcher to get the update.",
+      "starts_at_utc": "2026-10-07T20:05:10Z",
+      "ends_at_utc": "2026-10-21T20:05:10Z"
+    }
+  ]
 }

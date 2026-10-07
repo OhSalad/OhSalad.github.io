@@ -3,23 +3,201 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tales of Pirates DX — Client downloads</title>
+  <meta name="description" content="Tales of Pirates DX project updates: lower idle-server CPU use, a signed updater, expanded inventory, gameplay fixes, and new GM tools. Download the Windows client.">
+  <meta name="theme-color" content="#102329">
+  <title>Tales of Pirates DX | Downloads and project updates</title>
   <style>
-    body { margin: 0; background: #102329; color: #f6f0dc; font: 18px/1.6 system-ui, sans-serif; }
-    main { max-width: 650px; margin: 12vh auto; padding: 32px; }
-    h1 { line-height: 1.2; }
-    a { color: #f4c96b; }
+    :root { color-scheme: dark; --bg: #102329; --panel: #172e35; --text: #f6f0dc; --muted: #b9c8c8; --accent: #f4c96b; --line: #345057; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.65 system-ui, sans-serif; }
+    a { color: var(--accent); text-underline-offset: 4px; }
+    a:hover { color: #ffe6af; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
+    .wrap { width: min(1120px, 100% - 48px); margin: auto; }
+    header { border-bottom: 1px solid var(--line); }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 23px 0; }
+    .brand { color: var(--text); font-weight: 750; text-decoration: none; letter-spacing: .02em; }
+    nav { display: flex; flex-wrap: wrap; gap: 22px; font-size: 14px; }
+    nav a { color: var(--muted); text-decoration: none; }
+    .hero { padding: 76px 0 56px; max-width: 880px; }
+    .eyebrow { color: var(--accent); font-size: 12px; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; }
+    h1, h2, h3 { line-height: 1.15; }
+    h1 { margin: 17px 0 24px; font-size: clamp(38px, 5.6vw, 66px); letter-spacing: -.035em; }
+    h2 { font-size: clamp(27px, 3vw, 36px); letter-spacing: -.025em; margin: 12px 0 18px; }
+    h3 { font-size: 21px; margin: 0 0 15px; }
+    p { margin: 0 0 18px; }
+    .lead { color: var(--muted); font-size: 20px; max-width: 770px; }
+    .actions { display: flex; align-items: center; flex-wrap: wrap; gap: 22px; margin-top: 28px; }
+    .button { display: inline-block; background: var(--accent); color: var(--bg); border-radius: 6px; padding: 13px 21px; font-weight: 750; text-decoration: none; }
+    .button:hover { background: #ffe0a0; color: var(--bg); }
+    .small { font-size: 14px; color: var(--muted); }
+    .download-note { margin: 17px 0 0; max-width: 730px; }
+    section { padding: 48px 0; border-top: 1px solid var(--line); }
+    .intro { max-width: 800px; color: var(--muted); }
+    .performance { display: grid; grid-template-columns: .85fr 1.35fr; gap: 44px; align-items: start; }
+    .metric { border-left: 3px solid var(--accent); padding-left: 24px; }
+    .metric strong { display: block; color: var(--accent); font-size: clamp(54px, 6vw, 80px); line-height: 1; letter-spacing: -.04em; margin: 18px 0 15px; }
+    .metric span { display: block; font-size: 20px; }
+    .metric .small { font-size: 14px; margin-top: 14px; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 28px; }
+    article { padding: 27px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; }
+    article p { color: var(--muted); font-size: 16px; }
+    article p:last-child { margin-bottom: 0; }
+    .tag { display: inline-block; color: var(--accent); font-size: 11px; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 16px; }
+    .latest { display: grid; grid-template-columns: .8fr 1.4fr; gap: 44px; }
+    ul { margin: 0; padding-left: 22px; color: var(--muted); }
+    li { padding: 0 0 13px 4px; }
+    li strong { color: var(--text); }
+    .install { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 30px; margin-top: 25px; }
+    footer { padding: 28px 0 38px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 22px; }
+    @media (max-width: 850px) { .grid { grid-template-columns: repeat(2, 1fr); } .performance, .latest { grid-template-columns: 1fr; gap: 28px; } }
+    @media (max-width: 560px) { .wrap { width: calc(100% - 32px); } .header-inner { align-items: flex-start; flex-direction: column; gap: 12px; } nav { gap: 18px; } .hero { padding: 44px 0 36px; } .lead { font-size: 18px; } .grid { grid-template-columns: 1fr; } section { padding: 35px 0; } article, .install { padding: 23px; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
 </head>
 <body>
-  <main>
-    <h1>Tales of Pirates DX</h1>
-    <p>Install the full online client 1.1.0, then open its launcher. This inventory update requires the new client and installs in its own Tales of Pirates DX Online Inventory folder. Your earlier installation is preserved.</p>
-    <p><a href="https://github.com/OhSalad/OhSalad.github.io/releases/download/online-client-1-1-0-inventory/TOPDX-Online-Inventory-Setup-1.1.0.exe">Download Tales of Pirates DX Online 1.1.0</a> · Windows · 669 MiB</p>
-    <p>The stable updater uses permanent signing keys and a signed release catalog without routine expiration. It installs in its own folder; earlier test installations remain separate.</p>
-    <p>Inventory starts at 96 slots with six columns and sixteen scrollable rows. Aqua is the default theme; dark is selectable. Existing characters reset once to 96 slots and can use all six expansion items again. If any item occupies slot 96 or above, the reset waits until those slots are empty and you reconnect.</p>
-    <p><a href="https://discord.gg/KWvwrfKjC9">Join Discord</a> · <a href="https://github.com/OhSalad/OhSalad.github.io/issues">Support</a></p>
-    <p><a href="https://github.com/OhSalad/OhSalad.github.io/releases">View client releases</a></p>
+  <header>
+    <div class="wrap header-inner">
+      <a class="brand" href="#">Tales of Pirates DX</a>
+      <nav aria-label="Main navigation">
+        <a href="#optimizations">Optimizations</a>
+        <a href="#changes">What's changed</a>
+        <a href="#download">Download</a>
+        <a href="https://discord.gg/KWvwrfKjC9">Discord</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <div class="hero">
+      <div class="eyebrow">The project, beyond the download</div>
+      <h1>What has changed in<br>Tales of Pirates DX</h1>
+      <p class="lead">We've been working on the systems behind the game: reducing server idle work, making updates recoverable, expanding inventory, and fixing movement, trading, and pet progression. Here is what we've added and improved.</p>
+      <div class="actions">
+        <a class="button" href="https://github.com/OhSalad/OhSalad.github.io/releases/download/online-client-1-1-0-inventory/TOPDX-Online-Inventory-Setup-1.1.0.exe">Download online client 1.1.0</a>
+        <span class="small">Windows &middot; 669 MiB</span>
+      </div>
+      <p class="small download-note">Project changes reviewed through October 7, 2026. Some recent source changes may require a later client update or server rollout.</p>
+    </div>
+
+    <section id="optimizations" aria-labelledby="optimizations-title">
+      <div class="eyebrow">Less repeated work</div>
+      <h2 id="optimizations-title">Optimizations with a clear purpose</h2>
+      <div class="performance">
+        <div class="metric">
+          <strong>~60%</strong>
+          <span>lower idle-server container CPU</span>
+          <span class="small">Observed in the corrected October 6 test-VPS comparison, with zero connected clients.</span>
+        </div>
+        <div>
+          <h3>Wake when there is work to do</h3>
+          <p>The network dispatchers previously woke every 2 milliseconds to check for work. An interruptible wake channel lets them wait and wake promptly when work arrives. Idle worker pools also wake explicitly during shutdown.</p>
+          <p class="small">The corrected comparison recorded container CPU at 192&ndash;214% before and 68&ndash;84% after, where 100% equals one CPU core. The shared host's load differed between windows. This is a scoped idle measurement, not an official performance baseline or a claim about player FPS or busy-server throughput.</p>
+        </div>
+      </div>
+      <div class="grid">
+        <article>
+          <span class="tag">Client rendering</span>
+          <h3>Less work in item search</h3>
+          <p>The GM item browser caches glyph widths, waits briefly for typing to settle before rebuilding results, and measures item text only when needed for rendering. Opening the browser no longer builds the same grid twice.</p>
+        </article>
+        <article>
+          <span class="tag">Server lookups</span>
+          <h3>Direct entity checks</h3>
+          <p>Checking whether an entity pointer belongs to its pool now uses a constant-time lookup instead of scanning the pool. It removes repeated searching from that validation path.</p>
+        </article>
+        <article>
+          <span class="tag">Allocation</span>
+          <h3>Create state when needed</h3>
+          <p>Hate-tracking state and inventory storage use lazy allocation paths, with fixes for safe publication and cleanup when allocation fails. These changes avoid creating some state before it is needed.</p>
+        </article>
+      </div>
+      <p class="small" style="margin-top: 20px">The client, lookup, and allocation changes above describe implemented mechanisms. No measured speedup is claimed for them.</p>
+    </section>
+
+    <section id="changes" aria-labelledby="changes-title">
+      <div class="eyebrow">Additions and fixes</div>
+      <h2 id="changes-title">What players and operators gain</h2>
+      <p class="intro">The work also covers everyday game behavior, tools for managing content, and a more reliable path for delivering changes.</p>
+      <p class="intro">Crafting uses the server's dice result for informed guesses. Cancelling a forge minigame releases its lock, so abandoning it does not leave the character stuck.</p>
+      <div class="grid">
+        <article>
+          <span class="tag">Inventory</span>
+          <h3>More room, clearer layout</h3>
+          <p>Inventory starts at 96 slots, arranged in six columns and sixteen scrollable rows. Aqua is the default theme, with dark available as an option.</p>
+          <p>Follow-up fixes preserve capacity and transferred item metadata, isolate trade operations, and strengthen temporary-bag and transactional item handling.</p>
+        </article>
+        <article>
+          <span class="tag">Updates</span>
+          <h3>A signed update system</h3>
+          <p>The launcher verifies signed release catalogs and updates, applies changes through recoverable transactions, and supports launcher upgrades. Installer checks reject damaged or incompatible managed installations.</p>
+          <p>Permanent signing keys and a signed release catalog replace the earlier expiring test setup.</p>
+        </article>
+        <article>
+          <span class="tag">Movement and maps</span>
+          <h3>Fixes for getting around</h3>
+          <p>High-speed movement stutter and world-map teleport disconnects have been addressed. Teleport coordinates were corrected across 35 maps, with a valid birth-point fallback when the requested position cannot be used.</p>
+        </article>
+        <article>
+          <span class="tag">Pets and skills</span>
+          <h3>Consistent progression</h3>
+          <p>Angela and Angela Junior use the normal pet fruit and ration rules. Pet equip values have been restored, and Fairy of Evil possession now reaches its EXP and drop-bonus logic.</p>
+          <p>Skill grants filter out inappropriate monster and boss combat skills. Helpful innate skills no longer replace a character's attack default.</p>
+        </article>
+        <article>
+          <span class="tag">GM tools</span>
+          <h3>Tools inside the game</h3>
+          <p>The <code>/items</code>, <code>/help</code>, and <code>/worlds</code> menus make item browsing, command discovery, and map navigation available in the client. Admin NPC services check GM authorization.</p>
+        </article>
+        <article>
+          <span class="tag">Content and diagnostics</span>
+          <h3>Changes that stay traceable</h3>
+          <p>Canonical content packs feed validated runtime tables. Projection checks catch differences so a generated table does not silently undo an authored fix.</p>
+          <p>Client crash diagnostics preserve native fault context and crash dumps for diagnosing failures.</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="latest-title">
+      <div class="latest">
+        <div>
+          <div class="eyebrow">Latest source changes</div>
+          <h2 id="latest-title">October 7 additions</h2>
+          <p class="small">Committed project work. Availability depends on the installed client and server revision.</p>
+        </div>
+        <ul>
+          <li><strong>Gem bonus coverage.</strong> Nine missing client bonus mappings were added, bringing coverage to all 53 gem mappings.</li>
+          <li><strong>Gem-tier grants.</strong> GM item grants can select gem tiers, with validation at the server boundary.</li>
+          <li><strong>Stat-specific pet food.</strong> Fifteen foods add stat selection to the GM pet-food tools while preserving existing item IDs and level caps.</li>
+          <li><strong>Inventory corrections.</strong> Capacity, transfer metadata, and trade isolation received another round of fixes.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="download" aria-labelledby="download-title">
+      <div class="eyebrow">Windows client</div>
+      <h2 id="download-title">Install and play</h2>
+      <p class="intro">Install the full online client 1.1.0, then open its launcher. This inventory release installs in its own Tales of Pirates DX Online Inventory folder and preserves your earlier installation.</p>
+      <div class="install">
+        <h3>Moving to the 96-slot inventory</h3>
+        <p>Existing characters reset once to 96 slots and can use all six expansion items again. If an item occupies slot 96 or above, the reset waits until those slots are empty and you reconnect.</p>
+        <div class="actions">
+          <a class="button" href="https://github.com/OhSalad/OhSalad.github.io/releases/download/online-client-1-1-0-inventory/TOPDX-Online-Inventory-Setup-1.1.0.exe">Download client 1.1.0</a>
+          <a href="https://github.com/OhSalad/OhSalad.github.io/releases">View client releases</a>
+        </div>
+      </div>
+    </section>
   </main>
+  <footer>
+    <div class="wrap footer-inner">
+      <span>Tales of Pirates DX &middot; Project updates reviewed October 7, 2026</span>
+      <div class="footer-links">
+        <a href="https://discord.gg/KWvwrfKjC9">Join Discord</a>
+        <a href="https://github.com/OhSalad/OhSalad.github.io/issues">Support</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
